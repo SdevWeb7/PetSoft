@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { initialItems } from "../lib/constants.js";
+import { persist } from "zustand/middleware";
 
-export const useItemsStore = create((set) => ({
+export const useItemsStore = create(persist((set) => ({
    items: initialItems,
    removeAllItems: () => set(() => ({ items: [] })),
    resetToInitial: () => set(() => ({ items: initialItems })),
@@ -10,4 +11,4 @@ export const useItemsStore = create((set) => ({
    addItem: (newItemText) => set(state => ({ items: [...state.items, {id: state.items.length+1, name: newItemText, packed: false}] })),
    toggleItem: (id) => set(state => ({ items: state.items.map(item => item.id === id ? { ...item, packed: !item.packed } : item) })),
    deleteItem: (id) => set(state => ({ items: state.items.filter(item => item.id !== id) }))
-}));
+}), { name: "items" }));
