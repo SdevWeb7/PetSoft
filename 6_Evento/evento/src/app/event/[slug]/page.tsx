@@ -21,12 +21,12 @@ export async function generateMetadata({params}: EventPageProps) : Promise<Metad
         description: `Event ${capitalize(event.name)}`
     };
 }
-export function generateStaticParams() {
-    return [
-        { slug: 'comedy-extravaganza' },
-        { slug: 'dj-practice-session' }
-    ]
-}
+// export function generateStaticParams() {
+//     return [
+//         { slug: 'comedy-extravaganza' },
+//         { slug: 'dj-practice-session' }
+//     ]
+// }
 export default async function Event({params}: EventPageProps) {
     const slug = params.slug;
     const event = await getEvent(slug);

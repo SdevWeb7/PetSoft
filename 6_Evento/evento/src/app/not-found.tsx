@@ -2,6 +2,6 @@ export default function Notfound()
 {
 
     return <>
-        La page demandée n'existe pas
+        La page demandée n&apos;existe pas
     </>
 }

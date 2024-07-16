@@ -12,7 +12,7 @@ type EventCardProps = {
 
 const MotionLink = motion(Link);
 export default function EventCard({event}: EventCardProps) {
-    const linkRef = useRef<>(null);
+    const linkRef = useRef(null);
     const {scrollYProgress} = useScroll({
         target: linkRef,
         offset: ["0 1", "1.5 1"]
@@ -22,6 +22,7 @@ export default function EventCard({event}: EventCardProps) {
 
     return <MotionLink
             ref={linkRef}
+            // @ts-ignore
             style={{scale: scaleProgress, opacity: opacityProgress}}
             initial={{scale: .8, opacity: 0}}
             className={'flex-1 basis-80 h-[380px] max-w-[500px]'}

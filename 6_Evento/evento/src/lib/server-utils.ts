@@ -1,12 +1,10 @@
 import 'server-only';
 
-import {EventoEvent, Prisma} from "@prisma/client";
+import {EventoEvent} from "@prisma/client";
 import {unstable_cache} from "next/cache";
 import prisma from "@/lib/db";
 import {notFound} from "next/navigation";
 import {capitalize} from "@/lib/utils";
-import SelectSubset = Prisma.SelectSubset;
-import EventoEventFindManyArgs = Prisma.EventoEventFindManyArgs;
 
 
 type ReturnTypesEventsFetch = {
@@ -23,7 +21,7 @@ export const getEvents = unstable_cache(async(city: string, page=1): Promise<Ret
         },
         take: 6,
         skip: (page - 1) * 6
-    } as SelectSubset<EventoEventFindManyArgs>);
+    });
 
     const totalCount = await prisma.eventoEvent.count({
         where: {
