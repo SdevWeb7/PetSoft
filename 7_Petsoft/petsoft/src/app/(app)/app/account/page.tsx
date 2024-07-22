@@ -1,6 +1,6 @@
 import H1 from "@/components/h1";
 import ContentBlock from "@/components/app/content-block";
-import {auth} from "@/lib/auth";
+import {auth} from "@/lib/auth-no-edge";
 import {redirect} from "next/navigation";
 import SignOutBtn from "@/components/auth/sign-out-btn";
 

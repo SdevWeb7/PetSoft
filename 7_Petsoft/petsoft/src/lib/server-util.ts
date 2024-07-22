@@ -1,5 +1,5 @@
 import "server-only";
-import {auth} from "@/lib/auth";
+import {auth} from "@/lib/auth-no-edge";
 import {Pet} from "@prisma/client";
 import prisma from "@/lib/db";
 

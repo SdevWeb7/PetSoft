@@ -6,7 +6,7 @@ import PetContextProvider from "@/contexts/pet-context-provider";
 import SearchContextProvider from "@/contexts/search-context-provider";
 import prisma from "@/lib/db";
 import { Toaster } from "sonner";
-import {auth} from "@/lib/auth";
+import {auth} from "@/lib/auth-no-edge";
 import {redirect} from "next/navigation";
 
 export default async function AppLayout({children}: PropsWithChildren) {

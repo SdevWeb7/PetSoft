@@ -3,7 +3,7 @@
 import prisma from "@/lib/db";
 import {revalidatePath} from "next/cache";
 import {petFormSchema, petIdSchema} from "@/lib/zod-schemas";
-import {auth} from "@/lib/auth";
+import {auth} from "@/lib/auth-no-edge";
 
 export async function addPet(newPet: unknown) {
    await new Promise((resolve) => setTimeout(resolve, 2000));

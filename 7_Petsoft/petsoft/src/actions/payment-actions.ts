@@ -1,7 +1,7 @@
 "use server";
 
 import {redirect} from "next/navigation";
-import {auth} from "@/lib/auth";
+import {auth} from "@/lib/auth-no-edge";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
